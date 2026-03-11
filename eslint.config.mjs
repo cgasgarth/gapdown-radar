@@ -37,9 +37,13 @@ export default tseslint.config(
     files: typedFiles,
     languageOptions: {
       parserOptions: {
-        projectService: {
-          allowDefaultProject: ["eslint.config.mjs"],
-        },
+        project: [
+          "./packages/contracts/tsconfig.json",
+          "./apps/api/tsconfig.json",
+          "./apps/web/tsconfig.json",
+          "./scripts/tsconfig.json",
+          "./e2e/tsconfig.json",
+        ],
         tsconfigRootDir: import.meta.dirname,
       },
       globals: {

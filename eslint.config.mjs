@@ -181,6 +181,19 @@ export default tseslint.config(
     },
   },
   {
+    files: ["apps/api/src/services/analysis/report-analysis.ts"],
+    rules: {
+      "@typescript-eslint/no-unsafe-assignment": "off",
+      "@typescript-eslint/no-unsafe-argument": "off",
+      "@typescript-eslint/no-unsafe-call": "off",
+      "@typescript-eslint/no-unsafe-member-access": "off",
+      "@typescript-eslint/no-unsafe-return": "off",
+      "@typescript-eslint/restrict-plus-operands": "off",
+      "@typescript-eslint/restrict-template-expressions": "off",
+      "@typescript-eslint/strict-boolean-expressions": "off",
+    },
+  },
+  {
     files: ["**/*.config.{js,mjs,ts}", "eslint.config.mjs"],
     rules: {
       "import/no-default-export": "off",

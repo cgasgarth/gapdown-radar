@@ -1,0 +1,100 @@
+:root {
+  color-scheme: light;
+  --ink: #17202a;
+  --muted: #566573;
+  --line: rgba(23, 32, 42, 0.12);
+  --paper: #fbf8f1;
+  --accent: #0d6e6e;
+  --accent-soft: rgba(13, 110, 110, 0.1);
+  --warning: #8c4a12;
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  --sans: "Avenir Next", "Helvetica Neue", sans-serif;
+  font-family: var(--sans);
+  background:
+    radial-gradient(circle at top left, rgba(13, 110, 110, 0.08), transparent 28%),
+    linear-gradient(180deg, #f7f3ea 0%, var(--paper) 100%);
+  color: var(--ink);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+}
+
+button,
+input,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.shell {
+  width: min(1320px, calc(100% - 40px));
+  margin: 0 auto;
+  padding: 34px 0 56px;
+}
+
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 24px 60px rgba(23, 32, 42, 0.06);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  display: grid;
+  gap: 6px;
+}
+
+.section-heading h3 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.compact-heading h3 {
+  font-size: 1.05rem;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.status,
+.error {
+  padding: 18px;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.error {
+  color: #8c2f2f;
+}
+
+@media (max-width: 920px) {
+  .shell {
+    width: min(100%, calc(100% - 24px));
+    padding-top: 22px;
+  }
+}

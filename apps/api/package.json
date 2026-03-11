@@ -1,0 +1,14 @@
+{
+  "name": "@gapdown-radar/api",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "bun build src/index.ts --target bun --outdir dist"
+  },
+  "dependencies": {
+    "@gapdown-radar/contracts": "workspace:*",
+    "hono": "^4.7.4",
+    "zod": "^3.24.2"
+  }
+}

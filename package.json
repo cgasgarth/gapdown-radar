@@ -1,0 +1,58 @@
+{
+  "name": "gapdown-radar",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -c auto \"bun run dev:api\" \"bun run dev:web\"",
+    "dev:api": "bun run --cwd apps/api dev",
+    "dev:web": "bun run --cwd apps/web dev",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit -p packages/contracts/tsconfig.json && tsc --noEmit -p apps/api/tsconfig.json && tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p e2e/tsconfig.json",
+    "test": "bun test apps/api/src",
+    "check:e2e": "playwright install chromium && playwright test --config e2e/playwright.config.ts",
+    "build": "bun run build:api && bun run build:web",
+    "build:api": "bun run --cwd apps/api build",
+    "build:web": "bun run --cwd apps/web build",
+    "check:structure": "bun run scripts/enforce-structure.ts",
+    "smoke": "bun run scripts/smoke-test.ts",
+    "verify": "bun run check:structure && bun run lint && bun run format:check && bun run typecheck && bun run test && bun run build && bun run smoke && bun run check:e2e"
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": false,
+    "trailingComma": "all",
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "bracketSpacing": true,
+    "arrowParens": "always"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "@vitejs/plugin-react": "^4.3.4",
+    "bun-types": "^1.2.5",
+    "concurrently": "^9.1.2",
+    "eslint": "^9.22.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-import-resolver-typescript": "^4.3.5",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.19",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^16.0.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2",
+    "typescript-eslint": "^8.26.1",
+    "vite": "^6.2.2"
+  }
+}

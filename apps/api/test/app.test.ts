@@ -8,7 +8,7 @@ import {
   SnapshotListSchema,
 } from "@gapdown-radar/contracts";
 
-import { createApp } from "./app";
+import { createApp } from "../src/app";
 
 const app = createApp({
   API_PORT: 4001,

@@ -1,7 +1,7 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
 
-import type { ApiEnvironment } from "./env";
+import type { ApiEnvironment } from "./services/env";
 import { createReportsRouter } from "./routes/reports";
 import { createReportService } from "./services/report-service";
 

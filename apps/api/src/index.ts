@@ -1,5 +1,5 @@
 import { createApp } from "./app";
-import { loadEnvironment } from "./env";
+import { loadEnvironment } from "./services/env";
 
 const environment = loadEnvironment();
 const app = createApp(environment);

@@ -13,7 +13,7 @@ import {
   type SnapshotList,
 } from "@gapdown-radar/contracts";
 
-import type { ApiEnvironment } from "../env";
+import type { ApiEnvironment } from "./env";
 import {
   createExecutiveSummary,
   createHeadline,

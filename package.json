@@ -14,7 +14,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit -p packages/contracts/tsconfig.json && tsc --noEmit -p apps/api/tsconfig.json && tsc --noEmit -p apps/web/tsconfig.json && tsc --noEmit -p scripts/tsconfig.json && tsc --noEmit -p e2e/tsconfig.json",
-    "test": "bun test apps/api/src",
+    "test": "bun test apps/api/test",
     "check:e2e": "playwright install chromium && playwright test --config e2e/playwright.config.ts",
     "build": "bun run build:api && bun run build:web",
     "build:api": "bun run --cwd apps/api build",

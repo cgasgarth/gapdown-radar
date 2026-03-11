@@ -1,4 +1,4 @@
-/// <reference path="../../bun-sqlite.d.ts" />
+/// <reference path="../../types/bun-sqlite.d.ts" />
 
 import { Database } from "bun:sqlite";
 import * as path from "node:path";
